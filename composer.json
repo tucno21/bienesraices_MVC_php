@@ -1,0 +1,22 @@
+{
+    "name": "carlos/bienesraices",
+    "description": "creando proyecto bienes raices",
+    "type": "project",
+    "authors": [
+        {
+            "name": "carlos",
+            "email": "carlitostucno@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.5",
+        "phpmailer/phpmailer": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Model\\": "./models",
+            "MVC\\": "./",
+            "Controllers\\": "./controllers"
+        }
+    }
+}
