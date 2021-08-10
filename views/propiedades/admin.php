@@ -29,7 +29,7 @@
                 <tr>
                     <th><?php echo $propiedad->id; ?></th>
                     <th><?php echo $propiedad->titulo; ?></th>
-                    <th><img src="/imagenes/<?php echo $propiedad->imagen; ?>" class="imagen-tabla" alt="casa"></th>
+                    <th><img src="../public/imagenes/<?php echo $propiedad->imagen; ?>" class="imagen-tabla" alt="casa"></th>
                     <th>$ <?php echo $propiedad->precio; ?></th>
                     <th>
                         <form method="POST" class="w-100">
