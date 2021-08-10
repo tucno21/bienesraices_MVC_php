@@ -5,3 +5,6 @@ require_once __DIR__ . '/../include/app.php';
 use MVC\Router;
 
 $router = new Router();
+
+//lamando el metodo de ruter
+$router->comprobarRutas();

@@ -4,8 +4,11 @@ namespace MVC;
 
 class Router
 {
-    public function __construct()
+    public function comprobarRutas()
     {
-        echo "creando el router";
+        //captura el nombre de la url
+        $urlActual = $_SERVER["PATH_INFO"] ?? '/';
+
+        debuguear($urlActual);
     }
 }
