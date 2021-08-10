@@ -47,6 +47,14 @@ class Router
     //mostrar vistas desde el controllador
     public function render($view)
     {
+        //iniciar almacenamento en memoria la vistas
+        ob_start();
         include __DIR__ . "/views/$view.php";
+        //pasamos la vista al $contenido y luego se limpia de la memoria
+
+        $contenido = ob_get_clean();
+
+        //la variable $contenido pasa al loyout de VISTAS
+        include __DIR__ . "/views/loyout.php";
     }
 }
