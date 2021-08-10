@@ -1,12 +1,15 @@
 <?php
 
 namespace Controllers;
+//llamando al router para llamar a las vistas desde el controlador
+use MVC\Router;
 
 class PropiedadController
 {
-    public static function index()
+    //pasamos la url y la funcion del router index
+    public static function index(Router $router)
     {
-        echo "index";
+        $router->render('propiedades/admin');
     }
 
     public static function crear()

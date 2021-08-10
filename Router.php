@@ -43,4 +43,10 @@ class Router
 
         // debuguear("");
     }
+
+    //mostrar vistas desde el controllador
+    public function render($view)
+    {
+        include __DIR__ . "/views/$view.php";
+    }
 }
