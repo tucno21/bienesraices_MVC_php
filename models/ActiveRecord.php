@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Model;
 
 //creando la clase padre
 class ActiveRecord
