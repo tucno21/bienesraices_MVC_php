@@ -3,13 +3,18 @@
 require_once __DIR__ . '/../include/app.php';
 
 use MVC\Router;
+//llamando al controller
+use Controllers\PropiedadController;
 
 $router = new Router();
 
+
+
 //le pasamos la url y la funcion al ROUTER
-$router->get('/nosotros', 'funcion_nosotros');
-$router->get('/tienda_virtual', 'funcion_tienda');
-$router->get('/', 'funcion_admin');
+$router->get('/admin', [PropiedadController::class, "index"]);
+$router->get('/propiedades/crear', 'funcion_tienda');
+$router->get('/propiedades/actualizar', 'funcion_tienda');
+
 
 
 //lamando el metodo de ruter

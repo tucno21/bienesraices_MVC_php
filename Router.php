@@ -31,11 +31,15 @@ class Router
 
         if ($fn) {
             //si la url existe con la funcion asociada
+
+            //funcion de php para llamar una funcion cuando no sabemos como se llama la funcion
+            //recibe el nombre de la funcion y busca la funcion el el controllador
+            call_user_func($fn, $this);
         } else {
             //o manadar a la pagina 404
             echo "Pagina no existe";
         }
 
-        debuguear("");
+        // debuguear("");
     }
 }
