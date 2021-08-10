@@ -12,8 +12,8 @@ $router = new Router();
 
 //le pasamos la url y la funcion al ROUTER
 $router->get('/admin', [PropiedadController::class, "index"]);
-$router->get('/propiedades/crear', 'funcion_tienda');
-$router->get('/propiedades/actualizar', 'funcion_tienda');
+$router->get('/propiedades/crear', [PropiedadController::class, "crear"]);
+$router->get('/propiedades/actualizar', [PropiedadController::class, "actualizar"]);
 
 
 
