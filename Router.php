@@ -34,6 +34,7 @@ class Router
 
             //funcion de php para llamar una funcion cuando no sabemos como se llama la funcion
             //recibe el nombre de la funcion y busca la funcion el el controllador
+            // lla a toda el contenido que tiene las dos variables debuguear($this);
             call_user_func($fn, $this);
         } else {
             //o manadar a la pagina 404
