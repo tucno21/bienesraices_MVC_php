@@ -9,7 +9,10 @@ class PropiedadController
     //pasamos la url y la funcion del router index
     public static function index(Router $router)
     {
-        $router->render('propiedades/admin');
+        $router->render('propiedades/admin', [
+            'mensaje' => 'mensaje2',
+            'propiedades' => 'casa'
+        ]);
     }
 
     public static function crear()

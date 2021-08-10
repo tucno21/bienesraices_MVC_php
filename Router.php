@@ -45,8 +45,14 @@ class Router
     }
 
     //mostrar vistas desde el controllador
-    public function render($view)
+    public function render($view, $datos = [])
     {
+
+        foreach ($datos as $key => $value) {
+            //$$ es variable de variable //captura el nombre de la llave y lo convirte en variable para la vista
+            $$key = $value;
+        }
+
         //iniciar almacenamento en memoria la vistas
         ob_start();
         include __DIR__ . "/views/$view.php";
