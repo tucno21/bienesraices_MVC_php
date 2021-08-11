@@ -18,7 +18,7 @@ class PropiedadController
         //traer los datos de todas las propiedades
         $propiedades = Propiedad::all();
         $vendedores = Vendedor::all();
-        $resultado = null;
+        $resultado = $_GET['resultado'] ?? null;
 
 
         $router->render('propiedades/admin', [
@@ -81,8 +81,17 @@ class PropiedadController
         ]);
     }
 
-    public static function actualizar()
+    public static function actualizar(Router $router)
     {
-        echo "actualizar propiedad";
+        $id = validarORedireccionar('/admin');
+        $propiedad = Propiedad::find($id);
+        $vendedores = Vendedor::all();
+        $errores = Propiedad::getErrores();
+
+        $router->render('propiedades/actualizar', [
+            'propiedad' => $propiedad,
+            'vendedores' => $vendedores,
+            'errores' => $errores,
+        ]);
     }
 }
