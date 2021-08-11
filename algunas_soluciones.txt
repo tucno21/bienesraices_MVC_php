@@ -61,3 +61,23 @@ public/
 
 //catura la url Router.php
 // $urlActual = $_SERVER["REQUEST_URI"] ?? '/';
+
+
+################
+CREAR USUSARIO
+<?php
+
+//importar la coneccion
+require "include/config/database.php";
+$db = conectarBD();
+
+//crear un email y password
+$email = 'correo@example.com';
+$password = '123456';
+$passwordHash = password_hash($password, PASSWORD_BCRYPT);
+
+//query para crear usuario
+$query = "INSERT INTO usuarios (email, password) VALUES ('${email}', '${passwordHash}')";
+echo $query;
+//agregar a la base de datos
+mysqli_query($db, $query);
