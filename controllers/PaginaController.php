@@ -4,6 +4,7 @@ namespace Controllers;
 //llamando al router para llamar a las vistas desde el controlador
 use MVC\Router;
 use Model\Propiedad;
+use PHPMailer\PHPMailer\PHPMailer;
 
 class PaginaController
 {
