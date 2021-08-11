@@ -43,10 +43,10 @@ if (!isset($inicio)) {
                         <a href="blog">Blog</a>
                         <a href="contacto">contacto</a>
                         <?php if ($auth) : ?>
-                            <a href="cerrar-sesion">Cerrar sesión</a>
+                            <a href="/logout">Cerrar sesión</a>
                         <?php endif; ?>
                         <?php if (!$auth) : ?>
-                            <a href="login">Iniciar sesión</a>
+                            <a href="/login">Iniciar sesión</a>
                         <?php endif; ?>
                     </nav>
                 </div>
