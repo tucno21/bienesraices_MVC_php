@@ -25,9 +25,17 @@ class PropiedadController
         ]);
     }
 
-    public static function crear()
+    public static function crear(Router $router)
     {
-        echo "crear propiedad";
+        $propiedad = new Propiedad;
+        $vendedores = Vendedor::all();
+        $errores = Propiedad::getErrores();
+
+        $router->render('propiedades/crear', [
+            'propiedad' => $propiedad,
+            'vendedores' => $vendedores,
+            'errores' => $errores,
+        ]);
     }
 
     public static function actualizar()
