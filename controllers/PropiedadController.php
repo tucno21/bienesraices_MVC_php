@@ -7,6 +7,9 @@ use MVC\Router;
 use Model\Propiedad;
 use Model\Vendedor;
 
+//llamar a la imagen
+use Intervention\Image\ImageManagerStatic as Imagex;
+
 class PropiedadController
 {
     //pasamos la url y la funcion del router index
@@ -30,6 +33,46 @@ class PropiedadController
         $propiedad = new Propiedad;
         $vendedores = Vendedor::all();
         $errores = Propiedad::getErrores();
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //instanciar o llamar a la clase 
+            $propiedad = new Propiedad($_POST['propiedad']);
+
+            //generar nombre unico para la imagen
+            $nombreImagen = md5(uniqid(rand(), true)) . '.jpg';
+
+            //setear la imagen
+            //realiza un resize a la imagen con libreria intervension 
+            if ($_FILES['propiedad']['tmp_name']['imagen']) {
+                $image = Imagex::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800, 600);
+                $propiedad->setImage($nombreImagen);
+            }
+
+            // debuguear($_SERVER['DOCUMENT_ROOT']);
+            // debuguear(CARPETA_IMAGENES);
+
+
+            //validar
+            $errores = $propiedad->validar();
+
+
+            //revisar que el array no este vacio el de errores
+            if (empty($errores)) {
+                //crear la carpeta para subir imagenes
+                if (!is_dir(CARPETA_IMAGENES)) {
+                    mkdir(CARPETA_IMAGENES);
+                }
+
+                //guardar la imagen en el servidor con libreria intervension
+                $image->save(CARPETA_IMAGENES . $nombreImagen);
+
+                //enviar a la base de datos SQL
+                // $resultado = mysqli_query($db, $query);
+
+                //GUARDAR EN LA BD
+                $propiedad->guardar();
+            }
+        }
 
         $router->render('propiedades/crear', [
             'propiedad' => $propiedad,

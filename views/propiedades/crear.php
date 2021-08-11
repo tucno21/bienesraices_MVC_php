@@ -9,7 +9,7 @@
         </div>
     <?php } ?>
     <!-- //enctype="multipart/form-data" es importante para subir archivos -->
-    <form class="formulario" method="POST" action="/propiedades/crear.php" enctype="multipart/form-data">
+    <form class="formulario" method="POST" action="/propiedades/crear" enctype="multipart/form-data">
 
         <?php include __DIR__ . '/formulario.php'; ?>
 
