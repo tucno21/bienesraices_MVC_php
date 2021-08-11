@@ -4,6 +4,7 @@ require_once __DIR__ . '/../include/app.php';
 
 use MVC\Router;
 //llamando al controller
+use Controllers\VendedorController;
 use Controllers\PropiedadController;
 
 $router = new Router();
@@ -18,6 +19,9 @@ $router->get('/propiedades/actualizar', [PropiedadController::class, "actualizar
 $router->post('/propiedades/actualizar', [PropiedadController::class, "actualizar"]);
 $router->post('/propiedades/eliminar', [PropiedadController::class, "eliminar"]);
 
+
+$router->get('/vendedores/crear', [VendedorController::class, "crear"]);
+$router->post('/vendedores/crear', [VendedorController::class, "crear"]);
 
 
 //lamando el metodo de ruter
