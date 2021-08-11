@@ -18,9 +18,9 @@ class PaginaController
         ]);
     }
 
-    public static function nosotros()
+    public static function nosotros(Router $router)
     {
-        echo "desde el nosotros";
+        $router->render('/paginas/nosotros', []);
     }
 
     public static function propiedades()
