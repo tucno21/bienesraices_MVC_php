@@ -19,7 +19,7 @@
 <seccion class="imagen-contacto">
     <h2>encuentra la casa de tus sueños</h2>
     <p>Llena el formulario de contacto y un asesor se pondra en contacto contigo a la brevedad</p>
-    <a class="boton boton-amarillo" href="contacto.php">Contactanos</a>
+    <a class="boton boton-amarillo" href="contacto">Contactanos</a>
 </seccion>
 
 <div class="contenedor seccion seccion-inferior">
@@ -37,7 +37,7 @@
                 </picture>
             </div>
             <div class="texto-entrada">
-                <a href="entrada.php">
+                <a href="entrada">
                     <h4>Terraza en el techo de tu casa</h4>
                     <p>escrito el: <span>20/10/2021</span> por: <span>Admin</span></p>
                     <p>Consejos para construir un terraza em el techo de tu casa con los mejores materiales y
@@ -57,7 +57,7 @@
                 </picture>
             </div>
             <div class="texto-entrada">
-                <a href="entrada.php">
+                <a href="entrada">
                     <h4>Guia para la decoración de tu hogas</h4>
                     <p>escrito el: <span>20/10/2021</span> por: <span>Admin</span></p>
                     <p>Maximiza el espacio en tu hogar cpn esta guia, aprende a combinar muebles y colores para
