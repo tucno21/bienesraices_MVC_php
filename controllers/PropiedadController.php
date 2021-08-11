@@ -88,6 +88,37 @@ class PropiedadController
         $vendedores = Vendedor::all();
         $errores = Propiedad::getErrores();
 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            //asignar los atributos 
+            $args = $_POST['propiedad'];
+
+            $propiedad->sincronizar($args);
+
+            $errores = $propiedad->validar();
+            // debuguear($propiedad);
+
+            //subida de archivos
+            //generar nombre unico para la imagen
+            $nombreImagen = md5(uniqid(rand(), true)) . '.jpg';
+            //realiza un resize a la imagen con libreria intervension 
+            if ($_FILES['propiedad']['tmp_name']['imagen']) {
+                $image = Imagex::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800, 600);
+                $propiedad->setImage($nombreImagen);
+            }
+
+            //revisar que el array no este vacio el de errores
+            if (empty($errores)) {
+                //GUARDAR EN LA BD
+                //guardar la imagen en el servidor con libreria intervension
+                if ($_FILES['propiedad']['tmp_name']['imagen']) {
+                    $image->save(CARPETA_IMAGENES . $nombreImagen);
+                }
+
+                $propiedad->guardar();
+            }
+        }
+
         $router->render('propiedades/actualizar', [
             'propiedad' => $propiedad,
             'vendedores' => $vendedores,
