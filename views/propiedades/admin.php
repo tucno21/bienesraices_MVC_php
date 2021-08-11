@@ -2,11 +2,14 @@
     <h1>Administrador de bienes raices</h1>
 
     <?php
-    $mensaje = muestraNotificacion(intval($resultado));
-    if ($mensaje) :
+    if ($resultado) {
+
+        $mensaje = muestraNotificacion(intval($resultado));
+        if ($mensaje) {
     ?>
-        <p class="alerta exito"><?php echo s($mensaje); ?></p>
-    <?php endif; ?>
+            <p class="alerta exito"><?php echo s($mensaje); ?></p>
+    <?php }
+    }; ?>
 
     <a class="boton boton-verde" href="/admin/propiedades/crear.php">Nueva Propiedad</a>
     <a class="boton boton-amarillo" href="/admin/vendedores/crear.php">Nuevo(a) Vendedor(a)</a>

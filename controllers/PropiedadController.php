@@ -15,11 +15,13 @@ class PropiedadController
         //traer los datos de todas las propiedades
         $propiedades = Propiedad::all();
         $vendedores = Vendedor::all();
+        $resultado = null;
 
 
         $router->render('propiedades/admin', [
             'propiedades' => $propiedades,
             'vendedores' => $vendedores,
+            'resultado' => $resultado,
         ]);
     }
 
