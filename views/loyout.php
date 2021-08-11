@@ -38,15 +38,15 @@ if (!isset($inicio)) {
                 <div class="derecha">
                     <img class="dark-mode-boton" src="../public/build/img/dark-luna.svg">
                     <nav class="navegacion">
-                        <a href="nosotros.php">Nosotros</a>
-                        <a href="anuncios.php">Anuncios</a>
-                        <a href="blog.php">Blog</a>
-                        <a href="contacto.php">contacto</a>
+                        <a href="nosotros">Nosotros</a>
+                        <a href="propiedades">Anuncios</a>
+                        <a href="blog">Blog</a>
+                        <a href="contacto">contacto</a>
                         <?php if ($auth) : ?>
-                            <a href="logout.php">Cerrar sesión</a>
+                            <a href="cerrar-sesion">Cerrar sesión</a>
                         <?php endif; ?>
                         <?php if (!$auth) : ?>
-                            <a href="login.php">Iniciar sesión</a>
+                            <a href="login">Iniciar sesión</a>
                         <?php endif; ?>
                     </nav>
                 </div>
@@ -67,10 +67,10 @@ if (!isset($inicio)) {
     <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">
-                <a href="nosotros.php">Nosotros</a>
-                <a href="anuncios.php">Anuncios</a>
-                <a href="blog.php">Blog</a>
-                <a href="contacto.php">contacto</a>
+                <a href="nosotros">Nosotros</a>
+                <a href="propiedades">Anuncios</a>
+                <a href="blog">Blog</a>
+                <a href="contacto">contacto</a>
             </nav>
         </div>
 

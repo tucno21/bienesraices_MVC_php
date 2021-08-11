@@ -3,12 +3,19 @@
 namespace Controllers;
 //llamando al router para llamar a las vistas desde el controlador
 use MVC\Router;
+use Model\Propiedad;
 
 class PaginaController
 {
-    public static function index()
+    public static function index(Router $router)
     {
-        echo "desde el index";
+        $propiedades = Propiedad::get(3);
+        $inicio = true;
+
+        $router->render('/paginas/index', [
+            'propiedades' => $propiedades,
+            'inicio' => $inicio,
+        ]);
     }
 
     public static function nosotros()
