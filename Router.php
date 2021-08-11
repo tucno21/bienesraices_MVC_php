@@ -14,6 +14,12 @@ class Router
         //almacena en rutasGET
         $this->rutasGET[$url] = $fn;
     }
+    public function post($url, $fn)
+    {
+        //almacena en rutasGET
+        $this->rutasPOST[$url] = $fn;
+    }
+
 
     public function comprobarRutas()
     {
@@ -27,6 +33,9 @@ class Router
         if ($metodo == "GET") {
             //almacenar la funcion asociada a la url de PUBLIC/INDEX
             $fn =  $this->rutasGET[$urlActual] ?? null;
+        } else {
+            // debuguear($_POST);
+            $fn =  $this->rutasPOST[$urlActual] ?? null;
         }
 
         if ($fn) {

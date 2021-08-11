@@ -13,6 +13,7 @@ $router = new Router();
 //le pasamos la url y la funcion al ROUTER
 $router->get('/admin', [PropiedadController::class, "index"]);
 $router->get('/propiedades/crear', [PropiedadController::class, "crear"]);
+$router->post('/propiedades/crear', [PropiedadController::class, "crear"]);
 $router->get('/propiedades/actualizar', [PropiedadController::class, "actualizar"]);
 
 
