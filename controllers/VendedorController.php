@@ -80,8 +80,8 @@ class VendedorController
                 $tipo = $_POST['tipo'];
 
                 if (validarTipoContenido($tipo)) {
-                    $propiedad = Propiedad::find($id);
-                    $propiedad->eliminar();
+                    $vendedor = Vendedor::find($id);
+                    $vendedor->eliminar();
                 }
             }
         }

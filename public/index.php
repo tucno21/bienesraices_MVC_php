@@ -24,6 +24,7 @@ $router->get('/vendedores/crear', [VendedorController::class, "crear"]);
 $router->post('/vendedores/crear', [VendedorController::class, "crear"]);
 $router->get('/vendedores/actualizar', [VendedorController::class, "actualizar"]);
 $router->post('/vendedores/actualizar', [VendedorController::class, "actualizar"]);
+$router->post('/vendedores/eliminar', [VendedorController::class, "eliminar"]);
 
 
 //lamando el metodo de ruter
