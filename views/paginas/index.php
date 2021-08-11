@@ -12,7 +12,7 @@
     ?>
 
     <div class="alinear-derecha">
-        <a href="anuncios.php" class="boton-verde">Var Todas</a>
+        <a href="/propiedades" class="boton-verde">Var Todas</a>
     </div>
 </section>
 

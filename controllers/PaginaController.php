@@ -32,14 +32,20 @@ class PaginaController
         ]);
     }
 
-    public static function propiedad()
+    public static function propiedad(Router $router)
     {
-        echo "desde el propiedad";
+        $id = validarORedireccionar('/propiedades');
+
+        $propiedad = Propiedad::find($id);
+
+        $router->render('/paginas/propiedad', [
+            'propiedad' => $propiedad,
+        ]);
     }
 
-    public static function blog()
+    public static function blog(Router $router)
     {
-        echo "desde el blog";
+        $router->render('/paginas/blog', []);
     }
 
     public static function entrada()
