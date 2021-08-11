@@ -7,9 +7,13 @@ use Model\Admin;
 
 class AuthController
 {
-    public static function login()
+    public static function login(Router $router)
     {
-        echo "login";
+        $errores = [];
+
+        $router->render('auth/login', [
+            'errores' => $errores,
+        ]);
     }
     public static function logout()
     {
