@@ -16,3 +16,15 @@ clonar el repositorio.
 ```
 git clone ...
 ```
+
+linea de comando
+
+```
+composer install
+```
+
+correo y contraseña
+
+```
+admin@admin.com // admin
+```
