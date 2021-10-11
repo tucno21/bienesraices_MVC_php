@@ -1,4 +1,3 @@
 <p align="center">
-<a href="https://laravel-admin.org/">
-<img src="https://laravel-admin.org/images/logo002.png" alt="laravel-admin">
+<img width="300" src="https://raw.githubusercontent.com/tucno21/bienesraices_MVC_php/main/foto.png" alt="foto">
 </a>
