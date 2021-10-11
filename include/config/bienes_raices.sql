@@ -41,7 +41,7 @@ CREATE TABLE `propiedades` (
 
 
 INSERT INTO `usuarios` (`id`, `email`, `password`) VALUES
-(2, 'correo@example.com', '$2y$10$jFnBsnIVsR9g2C0S/YcV/OhBdQrijE89xqivtF9ZtOFZd6VaL9WHS');
+(2, 'admin@admin.com', '$2y$10$h.//YvDEKEO9PG/s/eswVeln/tLO/rNl0y90szoDKfSrn4.yYqd0m');
 
 INSERT INTO `vendedores` (`id`, `nombre`, `apellidos`, `telefono`) VALUES
 (1, 'carlos', 'tucno', '915456789');
